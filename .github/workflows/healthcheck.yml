@@ -10,7 +10,7 @@ jobs:
     steps:
       
       - name: Say Hello
-        run: echo "hello!"
+        run: echo "hello!" #just to skip
 
       
       - name: Check the live pokemon app
