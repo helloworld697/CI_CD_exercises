@@ -4,19 +4,18 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '0 0 * * *' 
+
 jobs:
   health_check:
     runs-on: ubuntu-latest
     steps:
-      
       - name: Say Hello
-        run: echo "hello!" #just to skip
+        run: echo "hello!"
 
-      
       - name: Check the live pokemon app
-        uses: jasonet/url-health-check@v1
+        uses: softprops/healthcheck-action@v1
         with:
           url: https://ci-cd-exercises-p3d3.onrender.com/health
-          follow-redirect: false
+          
           max-attempts: 3
           retry-delay: 5s
