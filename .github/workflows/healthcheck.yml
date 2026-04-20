@@ -1,4 +1,4 @@
-name: Periodic Hello
+name: Periodic Health Check
 
 on:
   workflow_dispatch:
@@ -13,7 +13,7 @@ jobs:
         run: echo "hello!"
 
       - name: Check the live pokemon app
-        uses: softprops/healthcheck-action@v1
+        uses: jtalk/url-health-check-action@v3
         with:
           url: https://ci-cd-exercises-p3d3.onrender.com/health
           
